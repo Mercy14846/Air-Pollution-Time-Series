@@ -4,7 +4,7 @@ import folium
 from folium.plugins import HeatMap
 
 # Load the CSV file into a DataFrame
-csv_file_path = 'mar_air_quality_data.csv'  # Replace with your file path
+csv_file_path = 'jan_O_air_quality_data.csv'  # Replace with your file path
 df = pd.read_csv(csv_file_path, parse_dates=['date'])
 
 print (df.head())
@@ -13,8 +13,8 @@ print (df.head())
 df.set_index('date', inplace=True)
 
 # Coordinates for the location
-latitude = 7.9742417
-longitude = 3.4971033
+latitude = 8.1339967
+longitude = 4.1852767
 
 # Create a folium map centered on the location
 map_center = [latitude, longitude]
