@@ -23,7 +23,7 @@ m = folium.Map(location=map_center, zoom_start=12)
 # Add a marker to the map
 folium.Marker(
     location=map_center,
-    popup='Air Quality Monitoring Location',
+    popup='Air Quality Monitoring Location For Ogbomosho',
     icon=folium.Icon(color='blue', icon='info-sign')
 ).add_to(m)
 
