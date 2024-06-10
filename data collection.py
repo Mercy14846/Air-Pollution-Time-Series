@@ -49,8 +49,8 @@ hourly_data["sulphur_dioxide"] = hourly_sulphur_dioxide
 hourly_dataframe = pd.DataFrame(data = hourly_data)
 print(hourly_dataframe)
 
-hourly_dataframe.to_csv('jan_O_air_quality_data.csv', index=False)
-csv_file_path = 'jan_O_air_quality_data.csv'
+hourly_dataframe.to_csv('feb_O_air_quality_data.csv', index=False)
+csv_file_path = 'feb_O_air_quality_data.csv'
 
 # Load the CSV file into a DataFrame
 df = pd.read_csv(csv_file_path)
