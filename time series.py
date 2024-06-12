@@ -4,7 +4,7 @@ import folium
 from folium.plugins import HeatMap
 
 # Load the CSV file into a DataFrame
-csv_file_path = 'weekly_feb_2024.csv'  # Replace with your file path
+csv_file_path = 'may_air_quality_data.csv'  # Replace with your file path
 df = pd.read_csv(csv_file_path, parse_dates=['date'])
 
 print (df.head())

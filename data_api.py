@@ -1,6 +1,7 @@
 import requests
 import csv
 from datetime import datetime, timedelta
+import pandas as pd
 
 # Define your API key
 api_key = 'e49b736b3458535b673de52e96ef95d7'
