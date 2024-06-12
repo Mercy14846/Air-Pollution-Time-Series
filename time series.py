@@ -42,7 +42,7 @@ map_html_path = 'map_with_heatmap.html'
 m.save(map_html_path)
 
 # Plotting the time series data
-fig, axs = plt.subplots(4, 1, figsize=(12, 16), sharex=True)
+fig, axs = plt.subplots(4, 1, figsize=(10, 114), sharex=True)
 
 # Plot PM10
 axs[0].plot(df.index, df['pm10'], label='PM10', color='blue')
