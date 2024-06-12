@@ -4,7 +4,7 @@ import folium
 from folium.plugins import HeatMap
 
 # Load the CSV file into a DataFrame
-csv_file_path = 'feb_O_air_quality_data.csv'  # Replace with your file path
+csv_file_path = 'weekly_feb_2024.csv'  # Replace with your file path
 df = pd.read_csv(csv_file_path, parse_dates=['date'])
 
 print (df.head())
@@ -30,7 +30,7 @@ folium.Marker(
 # Prepare data for the heatmap
 # For simplicity, assume each pollutant contributes equally to the heatmap intensity
 heat_data = [
-    [latitude, longitude, row['pm10'] + row['pm2_5'] + row['carbon_monoxide'] + row['sulphur_dioxide'] ]
+    [latitude, longitude, row['pm10'] + row['pm2_5'] + row['carbon_monoxide'] * 100 + row['sulphur_dioxide'] * 1000 ]
     for index, row in df.iterrows()
 ]
 
