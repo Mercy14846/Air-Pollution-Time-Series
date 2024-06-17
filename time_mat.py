@@ -22,13 +22,13 @@ def plot_time_series(data, pollutant, title, ylabel):
     plt.show()
 
 # Plot CO time seriesDecember
-plot_time_series(data, 'co', 'CO Time Series for 2024 From December to March in Ogbomosho', 'CO (μg/m³)')
+# plot_time_series(data, 'co', 'CO Time Series for 2024 From December to March in Ogbomosho', 'CO (μg/m³)')
 
 # Plot SO2 time series
-# plot_time_series(data, 'so2', 'SO2 Time Series', 'SO2 (μg/m³)')
+plot_time_series(data, 'so2', 'SO2 Time Series for 2024 From December to March in Ogbomosho', 'SO2 (μg/m³)')
 
 # Plot PM2.5 time series
-# plot_time_series(data, 'pm2_5', 'PM2.5 Time Series', 'PM2.5 (μg/m³)')
+plot_time_series(data, 'pm2_5', 'PM2.5 Time Series for 2024 From December to March in Ogbomosho', 'PM2.5 (μg/m³)')
 
 # Plot PM10 time series
-# plot_time_series(data, 'pm10', 'PM10 Time Series', 'PM10 (μg/m³)')
+plot_time_series(data, 'pm10', 'PM10 Time Series for 2024 From December to March in Ogbomosho', 'PM10 (μg/m³)')
