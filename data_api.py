@@ -247,12 +247,12 @@ coordinates = [
     (7.93599, 4.00234),
     (7.99585, 4.06524),
     (8.31365, 4.30077),
-    
+
 ]
 
 # Date range
-start_date = datetime(2023, 12, 1)
-end_date = datetime(2024, 3, 31)
+start_date = datetime(2024, 2, 1)
+end_date = datetime(2024, 2, 29)
 
 # Function to make API request
 def fetch_air_pollution_data(lat, lon, start_timestamp, end_timestamp, api_key):
@@ -303,7 +303,7 @@ while current_date <= end_date:
     current_date += timedelta(days=7)
 
 # Save data to CSV
-csv_file = 'weekly_All_24.csv'
+csv_file = 'weekly_Feb_24.csv'
 csv_columns = ['latitude', 'longitude', 'start_date', 'end_date', 'aqi', 'co', 'no', 'no2', 'o3', 'so2', 'pm2_5', 'pm10', 'nh3']
 try:
     with open(csv_file, 'w', newline='') as csvfile:
@@ -330,10 +330,10 @@ try:
 except IOError:
     print("I/O error")
 
-csv_file_path = 'weekly_All_24.csv'
+csv_file_path = 'weekly_Feb_24.csv'
 
 # Load the CSV file into a DataFrame
 df = pd.read_csv(csv_file_path)
 
 # Display the first few rows of the DataFrame
-print(df.head())
+print(df.head(100))
