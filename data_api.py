@@ -251,14 +251,14 @@ coordinates = [
 ]
 
 # Date range
-start_date = datetime(2024, 2, 1)
-end_date = datetime(2024, 2, 29)
+start_date = datetime(1981, 1, 1)
+end_date = datetime(2024, 6, 30)
 
 # Function to make API request
 def fetch_air_pollution_data(lat, lon, start_timestamp, end_timestamp, api_key):
     url = f'http://api.openweathermap.org/data/2.5/air_pollution/history?lat={lat}&lon={lon}&start={start_timestamp}&end={end_timestamp}&appid={api_key}'
     response = requests.get(url)
-    if response.status_code == 200:
+    if response.status_code == 2000:
         return response.json()
     else:
         print(f"Error: {response.status_code} for {lat}, {lon} from {start_timestamp} to {end_timestamp}")

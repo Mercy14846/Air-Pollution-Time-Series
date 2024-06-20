@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Load the data from the CSV file
-csv_file = 'weekly_All_24.csv'
+csv_file = 'weekly_Feb_24.csv'
 data = pd.read_csv(csv_file)
 
 # Convert the start_date column to datetime
