@@ -516,7 +516,7 @@ coordinates = [
 ]
 
 # Date range
-start_date = datetime(2024, 1, 1)
+start_date = datetime(2023, 11, 1)
 end_date = datetime(2024, 3, 30)
 
 # Function to make API request
