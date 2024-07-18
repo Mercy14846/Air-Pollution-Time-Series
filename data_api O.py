@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 # Define your API key
-api_key = 'e49b736b3458535b673de52e96ef95d7'
+api_key = '82e3b9e8650260f04ede50fd59e999b2'
 
 # List of coordinates
 coordinates = [
@@ -251,14 +251,14 @@ coordinates = [
 ]
 
 # Date range
-start_date = datetime(1981, 1, 1)
-end_date = datetime(2024, 6, 30)
+start_date = datetime(2023, 11, 1)
+end_date = datetime(2024, 3, 30)
 
 # Function to make API request
 def fetch_air_pollution_data(lat, lon, start_timestamp, end_timestamp, api_key):
     url = f'http://api.openweathermap.org/data/2.5/air_pollution/history?lat={lat}&lon={lon}&start={start_timestamp}&end={end_timestamp}&appid={api_key}'
     response = requests.get(url)
-    if response.status_code == 2000:
+    if response.status_code == 200:
         return response.json()
     else:
         print(f"Error: {response.status_code} for {lat}, {lon} from {start_timestamp} to {end_timestamp}")
@@ -303,7 +303,7 @@ while current_date <= end_date:
     current_date += timedelta(days=7)
 
 # Save data to CSV
-csv_file = 'weekly_Feb_24.csv'
+csv_file = 'weekly_All_24_O.csv'
 csv_columns = ['latitude', 'longitude', 'start_date', 'end_date', 'aqi', 'co', 'no', 'no2', 'o3', 'so2', 'pm2_5', 'pm10', 'nh3']
 try:
     with open(csv_file, 'w', newline='') as csvfile:
@@ -330,7 +330,7 @@ try:
 except IOError:
     print("I/O error")
 
-csv_file_path = 'weekly_Feb_24.csv'
+csv_file_path = 'weekly_All_24_O.csv'
 
 # Load the CSV file into a DataFrame
 df = pd.read_csv(csv_file_path)
