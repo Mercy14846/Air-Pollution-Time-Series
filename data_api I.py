@@ -595,7 +595,7 @@ try:
 except IOError:
     print("I/O error")
 
-csv_file_path = 'weekly_Feb_24.csv'
+csv_file_path = 'weekly_All_24_I.csv'
 
 # Load the CSV file into a DataFrame
 df = pd.read_csv(csv_file_path)
