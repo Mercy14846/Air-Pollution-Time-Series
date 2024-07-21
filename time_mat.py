@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Load the data from the CSV file
-csv_file = 'C:/Users/173330/Downloads/Code/weekly_All_24_O.csv'
+csv_file = 'weekly_All_24_I.csv'
 data = pd.read_csv(csv_file)
 
 # Convert the start_date column to datetime
@@ -28,7 +28,7 @@ def plot_time_series(data, pollutant, title, ylabel):
 # plot_time_series(data, 'so2', 'SO2 Time Series for 2024 From December to March in Ogbomosho', 'SO2 (μg/m³)')
 
 # Plot PM2.5 time series
-plot_time_series(data, 'pm2_5', 'PM2.5 Time Series for 2024 From December to March in Ogbomosho', 'PM2.5 (μg/m³)')
+plot_time_series(data, 'pm2_5', 'PM2.5 Time Series for 2024 From November to March in Iseyin', 'PM2.5 (μg/m³)')
 
 # Plot PM10 time series
-plot_time_series(data, 'pm10', 'PM10 Time Series for 2024 From December to March in Ogbomosho', 'PM10 (μg/m³)')
+plot_time_series(data, 'pm10', 'PM10 Time Series for 2024 From November to March in Iseyin', 'PM10 (μg/m³)')
