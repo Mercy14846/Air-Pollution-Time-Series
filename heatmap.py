@@ -4,13 +4,13 @@ import folium
 from folium.plugins import HeatMap
 
 # Load the CSV file into a DataFrame
-csv_file_path = 'weekly_Feb_24.csv'  # Replace with your file path
-df = pd.read_csv(csv_file_path, parse_dates=['date'])
+csv_file_path = 'weekly_All_24_O.csv'  # Replace with your file path
+df = pd.read_csv(csv_file_path)
 
 print (df.head())
 
 # Set the date column as the index
-df.set_index('date', inplace=True)
+# df.set_index('date', inplace=True)
 
 # Coordinates for the location
 latitude = 8.1339967
@@ -30,7 +30,7 @@ folium.Marker(
 # Prepare data for the heatmap
 # For simplicity, assume each pollutant contributes equally to the heatmap intensity
 heat_data = [
-    [latitude, longitude, row['pm10'] + row['pm2_5'] + row['carbon_monoxide'] + row['sulphur_dioxide'] ]
+    [latitude, longitude, row['pm10'] + row['pm2_5'] + row['co'] + row['so2'] ]
     for index, row in df.iterrows()
 ]
 
@@ -46,7 +46,7 @@ fig, axs = plt.subplots(4, 1, figsize=(12, 16), sharex=True)
 
 # Plot PM10
 axs[0].plot(df.index, df['pm10'], label='PM10', color='blue')
-axs[0].set_title('PM10 Levels Over Time')
+axs[0].set_title('PM10 Levels Over Time Series for 2024 From December to March in Ogbomosho')
 axs[0].set_ylabel('PM10 (µg/m³)')
 axs[0].legend()
 
@@ -57,13 +57,13 @@ axs[1].set_ylabel('PM2.5 (µg/m³)')
 axs[1].legend()
 
 # Plot Carbon Monoxide
-axs[2].plot(df.index, df['carbon_monoxide'], label='Carbon Monoxide', color='red')
+axs[2].plot(df.index, df['co'], label='Carbon Monoxide', color='red')
 axs[2].set_title('Carbon Monoxide Levels Over Time')
 axs[2].set_ylabel('CO (mg/m³)')
 axs[2].legend()
 
 # Plot Sulphur Dioxide
-axs[3].plot(df.index, df['sulphur_dioxide'], label='Sulphur Dioxide', color='purple')
+axs[3].plot(df.index, df['so2'], label='Sulphur Dioxide', color='purple')
 axs[3].set_title('Sulphur Dioxide Levels Over Time')
 axs[3].set_ylabel('SO₂ (mg/m³)')
 axs[3].set_xlabel('Date')
