@@ -23,7 +23,7 @@ def plot_time_series(data, pollutant, title, ylabel):
     plt.xlabel('Date')
     plt.ylabel(ylabel)
     plt.title(title)
-    plt.legend(loc='best')
+    # plt.legend(loc='best')
     plt.grid(True)
     plt.show()
 
