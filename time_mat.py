@@ -6,7 +6,7 @@ csv_file = 'weekly_All_24_I.csv'
 data = pd.read_csv(csv_file)
 
 # Convert the start_date column to datetime
-data['start_date'] = pd.to_datetime(data['start_date'])
+data['start_date'] = pd.to_datetime(data['start_date'], dayfirst=True)
 
 # Define a function to plot time series data for each pollutant
 def plot_time_series(data, pollutant, title, ylabel):
@@ -21,7 +21,7 @@ def plot_time_series(data, pollutant, title, ylabel):
     plt.grid(True)
     plt.show()
 
-# Plot CO time seriesDecember
+# Plot CO time series
 # plot_time_series(data, 'co', 'CO Time Series for 2024 From December to March in Ogbomosho', 'CO (μg/m³)')
 
 # Plot SO2 time series
