@@ -6,7 +6,7 @@ csv_file = 'weekly_All_24_I.csv'
 data = pd.read_csv(csv_file)
 
 # Convert the start_date column to datetime
-data['start_date'] = pd.to_datetime(data['start_date'])
+data['start_date'] = pd.to_datetime(data['start_date'], dayfirst=True)
 
 # Define a function to plot time series data for each pollutant
 def plot_time_series(data, pollutant, title, ylabel):
@@ -23,7 +23,7 @@ def plot_time_series(data, pollutant, title, ylabel):
     plt.xlabel('Date')
     plt.ylabel(ylabel)
     plt.title(title)
-    # plt.legend(loc='best')
+    plt.legend(loc='best')
     plt.grid(True)
     plt.show()
 
